@@ -1,0 +1,27 @@
+[
+    {
+        "titulo": "Elden Ring",
+        "genero": "RPG de acción",
+        "descripcion": "Explora las Tierras Intermedias en un mundo abierto lleno de peligros, jefes desafiantes y misterios por descubrir."
+    },
+    {
+        "titulo": "Mario Kart 8 Deluxe",
+        "genero": "Carreras / Familiar",
+        "descripcion": "Compite en circuitos llenos de color contra tus amigos, con ítems locos y modos para toda la familia."
+    },
+    {
+        "titulo": "Hollow Knight",
+        "genero": "Aventura / Metroidvania",
+        "descripcion": "Recorre un reino subterráneo en ruinas en esta aventura 2D de exploración y combate preciso."
+    },
+    {
+        "titulo": "Stardew Valley",
+        "genero": "Simulación",
+        "descripcion": "Cultiva tu propia granja, entabla amistades y construye la vida rural que siempre quisiste."
+    },
+    {
+        "titulo": "Civilization VI",
+        "genero": "Estrategia",
+        "descripcion": "Guía a tu civilización desde la Edad de Piedra hasta la era espacial en este clásico de estrategia por turnos."
+    }
+]
