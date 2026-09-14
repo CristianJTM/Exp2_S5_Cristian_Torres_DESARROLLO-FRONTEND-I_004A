@@ -24,10 +24,10 @@
 <body>
 
 <!-- ENCABEZADO -->
-<header id="inicio" class="encabezado text-center">
+<header id="inicio" class="encabezado text-center py-5 px-3">
     <div class="container">
-        <h1>Tienda de Videojuegos</h1>
-        <p>
+        <h1 class="mb-3">Tienda de Videojuegos</h1>
+        <p class="mx-auto fs-5">
             Tu tienda de videojuegos, consolas y accesorios favoritos.
             Encuentra los mejores títulos y novedades del mundo gamer.
         </p>
@@ -86,16 +86,16 @@
 </nav>
 
 
-<main>
+<main class="my-4">
 
     <!-- CARRUSEL BOOTSTRAP -->
-    <section class="seccion carrusel-seccion" aria-label="Videojuegos destacados">
+    <section class="seccion mb-4 p-4 rounded-3" aria-label="Videojuegos destacados">
 
         <div class="container">
 
             <div
                     id="carruselVideojuegos"
-                    class="carousel slide"
+                    class="carousel slide rounded-3 overflow-hidden"
                     data-bs-ride="carousel"
                     data-bs-interval="3000"
             >
@@ -139,9 +139,9 @@
                                 alt="Portada de The Legend of Zelda: Tears of the Kingdom"
                         >
 
-                        <div class="carousel-caption d-none d-md-block">
-                            <h2>The Legend of Zelda: Tears of the Kingdom</h2>
-                            <p>
+                        <div class="carousel-caption d-none d-md-block rounded-3 p-3">
+                            <h2 class="m-0">The Legend of Zelda: Tears of the Kingdom</h2>
+                            <p class="m-0">
                                 Aventura y exploración en un enorme mundo abierto.
                             </p>
                         </div>
@@ -155,9 +155,9 @@
                                 alt="Portada de EA Sports FC"
                         >
 
-                        <div class="carousel-caption d-none d-md-block">
-                            <h2>EA Sports FC</h2>
-                            <p>
+                        <div class="carousel-caption d-none d-md-block rounded-3 p-3">
+                            <h2 class="m-0">EA Sports FC</h2>
+                            <p class="m-0">
                                 Disfruta de una experiencia futbolística.
                             </p>
                         </div>
@@ -171,9 +171,9 @@
                                 alt="Imagen representativa de Minecraft"
                         >
 
-                        <div class="carousel-caption d-none d-md-block">
-                            <h2>Minecraft</h2>
-                            <p>
+                        <div class="carousel-caption d-none d-md-block rounded-3 p-3">
+                            <h2 class="m-0">Minecraft</h2>
+                            <p class="m-0">
                                 Construye y explora tu propio mundo.
                             </p>
                         </div>
@@ -225,11 +225,11 @@
 
 
     <!-- PRODUCTOS -->
-    <section id="productos" class="seccion">
+    <section id="productos" class="seccion mb-4 p-4 rounded-3">
 
         <div class="container">
 
-            <h2>Productos destacados</h2>
+            <h2 class="fs-3">Productos destacados</h2>
 
             <p>
                 Conoce algunos de los videojuegos más destacados
@@ -362,11 +362,11 @@
 
 
     <!-- CATEGORÍAS -->
-    <section id="categorias" class="seccion">
+    <section id="categorias" class="seccion mb-4 p-4 rounded-3">
 
         <div class="container">
 
-            <h2>Categorías</h2>
+            <h2 class="fs-3">Categorías</h2>
 
             <p>
                 En la tienda puedes encontrar videojuegos de diferentes
@@ -376,31 +376,31 @@
             <div class="row g-3">
 
                 <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="categoria">
+                    <div class="categoria p-3 rounded text-center">
                         Acción y aventura
                     </div>
                 </div>
 
                 <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="categoria">
+                    <div class="categoria p-3 rounded text-center">
                         Deportes
                     </div>
                 </div>
 
                 <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="categoria">
+                    <div class="categoria p-3 rounded text-center">
                         RPG
                     </div>
                 </div>
 
                 <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="categoria">
+                    <div class="categoria p-3 rounded text-center">
                         Estrategia
                     </div>
                 </div>
 
                 <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="categoria">
+                    <div class="categoria p-3 rounded text-center">
                         Juegos familiares
                     </div>
                 </div>
@@ -413,22 +413,22 @@
 
 
     <!-- CONTACTO -->
-    <section id="contacto" class="seccion">
+    <section id="contacto" class="seccion mb-4 p-4 rounded-3">
 
         <div class="container">
 
-            <h2>Contacto</h2>
+            <h2 class="fs-3">Contacto</h2>
 
             <p>
                 Si necesitas información sobre nuestros productos,
                 puedes comunicarte con nosotros.
             </p>
 
-            <ul class="datos-contacto">
+            <ul class="datos-contacto p-3 my-3 rounded">
 
-                <li>Correo: contacto@correo.cl</li>
-                <li>Teléfono: +56 9 1234 5678</li>
-                <li>Dirección: Avenida 123, Santiago, Chile</li>
+                <li class="my-2">Correo: contacto@correo.cl</li>
+                <li class="my-2">Teléfono: +56 9 1234 5678</li>
+                <li class="my-2">Dirección: Avenida 123, Santiago, Chile</li>
 
             </ul>
 
@@ -438,10 +438,44 @@
                         href="https://www.instagram.com/"
                         target="_blank"
                         rel="noopener noreferrer"
+                        class="fw-bold"
                 >
                     Instagram
                 </a>.
             </p>
+
+            <!-- FORMULARIO DE BOLETÍN (evento submit gestionado en js/script.js) -->
+            <form id="formBoletin" class="mt-4" novalidate>
+
+                <h3 class="fs-5">Suscríbete a nuestro boletín</h3>
+
+                <div class="mb-3">
+                    <label for="nombreBoletin" class="form-label">Nombre</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="nombreBoletin"
+                            name="nombre"
+                            placeholder="Tu nombre"
+                    >
+                </div>
+
+                <div class="mb-3">
+                    <label for="correoBoletin" class="form-label">Correo electrónico</label>
+                    <input
+                            type="email"
+                            class="form-control"
+                            id="correoBoletin"
+                            name="correo"
+                            placeholder="tucorreo@ejemplo.com"
+                    >
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Suscribirme
+                </button>
+
+            </form>
 
         </div>
 
@@ -451,16 +485,16 @@
 
 
 <!-- PIE DE PÁGINA -->
-<footer class="pie-pagina">
+<footer class="pie-pagina border-top border-3 mt-5 py-4 px-3 text-center">
 
     <div class="container">
 
-        <p>
+        <p class="mb-1">
             &copy; 2026 Tienda de Videojuegos.
             Todos los derechos reservados.
         </p>
 
-        <p>
+        <p class="mb-1">
             Tienda de videojuegos dedicada a ofrecer productos
             y novedades para la comunidad gamer.
         </p>
@@ -474,6 +508,9 @@
 <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
 ></script>
+
+<!-- Script propio: manipulación del DOM, eventos y Fetch API -->
+<script src="js/script.js"></script>
 
 </body>
 </html>
