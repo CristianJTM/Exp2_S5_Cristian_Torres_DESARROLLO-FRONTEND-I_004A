@@ -1,27 +1,66 @@
 [
     {
+        "id": "zelda-totk",
+        "titulo": "The Legend of Zelda: Tears of the Kingdom",
+        "categoria": "Acción y aventura",
+        "precio": 54990,
+        "imagen": "assets/img/videojuego1.jpg",
+        "descripcion": "Aventura y exploración en un enorme mundo abierto lleno de desafíos, misterios y personajes."
+    },
+    {
+        "id": "ea-sports-fc",
+        "titulo": "EA Sports FC",
+        "categoria": "Deportes",
+        "precio": 49990,
+        "imagen": "assets/img/videojuego2.jpg",
+        "descripcion": "Disfruta de una experiencia futbolística con equipos, jugadores y competiciones de todo el mundo."
+    },
+    {
+        "id": "minecraft",
+        "titulo": "Minecraft",
+        "categoria": "Juegos familiares",
+        "precio": 29990,
+        "imagen": "assets/img/videojuego3.jpg",
+        "descripcion": "Construye, explora y crea tu propio mundo utilizando diferentes recursos y materiales."
+    },
+    {
+        "id": "elden-ring",
         "titulo": "Elden Ring",
-        "genero": "RPG de acción",
+        "categoria": "RPG",
+        "precio": 49990,
+        "imagen": "assets/img/videojuego4.jpg",
         "descripcion": "Explora las Tierras Intermedias en un mundo abierto lleno de peligros, jefes desafiantes y misterios por descubrir."
     },
     {
+        "id": "mario-kart-8",
         "titulo": "Mario Kart 8 Deluxe",
-        "genero": "Carreras / Familiar",
+        "categoria": "Juegos familiares",
+        "precio": 54990,
+        "imagen": "assets/img/videojuego5.jpg",
         "descripcion": "Compite en circuitos llenos de color contra tus amigos, con ítems locos y modos para toda la familia."
     },
     {
+        "id": "hollow-knight",
         "titulo": "Hollow Knight",
-        "genero": "Aventura / Metroidvania",
+        "categoria": "Acción y aventura",
+        "precio": 9990,
+        "imagen": "assets/img/videojuego6.jpg",
         "descripcion": "Recorre un reino subterráneo en ruinas en esta aventura 2D de exploración y combate preciso."
     },
     {
+        "id": "stardew-valley",
         "titulo": "Stardew Valley",
-        "genero": "Simulación",
+        "categoria": "Estrategia",
+        "precio": 6990,
+        "imagen": "assets/img/videojuego7.jpg",
         "descripcion": "Cultiva tu propia granja, entabla amistades y construye la vida rural que siempre quisiste."
     },
     {
+        "id": "civilization-vi",
         "titulo": "Civilization VI",
-        "genero": "Estrategia",
+        "categoria": "Estrategia",
+        "precio": 29990,
+        "imagen": "assets/img/videojuego8.jpg",
         "descripcion": "Guía a tu civilización desde la Edad de Piedra hasta la era espacial en este clásico de estrategia por turnos."
     }
 ]
