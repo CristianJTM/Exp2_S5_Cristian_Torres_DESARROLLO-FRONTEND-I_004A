@@ -18,7 +18,7 @@
     >
 
     <!-- Hoja de estilos propia -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -71,8 +71,30 @@
                     <a class="nav-link" href="#productos">Productos</a>
                 </li>
 
+                <!-- Categorías simuladas: menú desplegable de Bootstrap -->
+                <li class="nav-item dropdown">
+                    <a
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            id="menuCategoriasDropdown"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                    >
+                        Categorías
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="menuCategoriasDropdown">
+                        <li><a class="dropdown-item" href="#productos" data-categoria="todos">Todos los productos</a></li>
+                        <li><a class="dropdown-item" href="#productos" data-categoria="Acción y aventura">Acción y aventura</a></li>
+                        <li><a class="dropdown-item" href="#productos" data-categoria="Deportes">Deportes</a></li>
+                        <li><a class="dropdown-item" href="#productos" data-categoria="RPG">RPG</a></li>
+                        <li><a class="dropdown-item" href="#productos" data-categoria="Estrategia">Estrategia</a></li>
+                        <li><a class="dropdown-item" href="#productos" data-categoria="Juegos familiares">Juegos familiares</a></li>
+                    </ul>
+                </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#categorias">Categorías</a>
+                    <a class="nav-link" href="#carrito">Carrito</a>
                 </li>
 
                 <li class="nav-item">
@@ -134,7 +156,7 @@
 
                     <div class="carousel-item active">
                         <img
-                                src="img/videojuego1.jpg"
+                                src="assets/img/videojuego1.jpg"
                                 class="d-block w-100"
                                 alt="Portada de The Legend of Zelda: Tears of the Kingdom"
                         >
@@ -150,7 +172,7 @@
 
                     <div class="carousel-item">
                         <img
-                                src="img/videojuego2.jpg"
+                                src="assets/img/videojuego2.jpg"
                                 class="d-block w-100"
                                 alt="Portada de EA Sports FC"
                         >
@@ -166,7 +188,7 @@
 
                     <div class="carousel-item">
                         <img
-                                src="img/videojuego3.jpg"
+                                src="assets/img/videojuego3.jpg"
                                 class="d-block w-100"
                                 alt="Imagen representativa de Minecraft"
                         >
@@ -224,7 +246,7 @@
     </section>
 
 
-    <!-- PRODUCTOS -->
+    <!-- PRODUCTOS (cargados dinámicamente con Fetch API) -->
     <section id="productos" class="seccion mb-4 p-4 rounded-3">
 
         <div class="container">
@@ -236,125 +258,31 @@
                 disponibles en nuestra tienda.
             </p>
 
-
-            <!-- SISTEMA GRID DE BOOTSTRAP -->
-            <div class="row g-4 mt-2">
-
-                <!-- CARD 1 -->
-                <div class="col-12 col-md-6 col-lg-4">
-
-                    <article class="card producto h-100">
-
-                        <img
-                                src="img/videojuego1.jpg"
-                                class="card-img-top"
-                                alt="Portada del videojuego The Legend of Zelda: Tears of the Kingdom"
-                        >
-
-                        <div class="card-body d-flex flex-column">
-
-                            <h3 class="card-title">
-                                The Legend of Zelda: Tears of the Kingdom
-                            </h3>
-
-                            <p class="card-text">
-                                Aventura y exploración en un enorme mundo
-                                abierto lleno de desafíos, misterios y personajes.
-                            </p>
-
-                            <a
-                                    href="https://www.nintendo.com/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="btn btn-primary mt-auto"
-                            >
-                                Sitio oficial de Nintendo
-                            </a>
-
-                        </div>
-
-                    </article>
-
+            <!-- BUSCADOR (evento submit gestionado en assets/js/script.js) -->
+            <form id="formBusqueda" class="row g-2 mb-2" role="search">
+                <div class="col-8 col-md-4">
+                    <input
+                            type="text"
+                            name="busqueda"
+                            id="inputBusqueda"
+                            class="form-control"
+                            placeholder="Buscar por nombre..."
+                    >
                 </div>
-
-
-                <!-- CARD 2 -->
-                <div class="col-12 col-md-6 col-lg-4">
-
-                    <article class="card producto h-100">
-
-                        <img
-                                src="img/videojuego2.jpg"
-                                class="card-img-top"
-                                alt="Portada del videojuego EA Sports FC"
-                        >
-
-                        <div class="card-body d-flex flex-column">
-
-                            <h3 class="card-title">
-                                EA Sports FC
-                            </h3>
-
-                            <p class="card-text">
-                                Disfruta de una experiencia futbolística
-                                con equipos, jugadores y competiciones
-                                de todo el mundo.
-                            </p>
-
-                            <a
-                                    href="https://www.ea.com/games/ea-sports-fc"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="btn btn-primary mt-auto"
-                            >
-                                Sitio oficial de EA Sports FC
-                            </a>
-
-                        </div>
-
-                    </article>
-
+                <div class="col-4 col-md-2">
+                    <button type="submit" class="btn btn-primary w-100">
+                        Buscar
+                    </button>
                 </div>
+            </form>
 
+            <!-- Mensaje mientras se cargan los productos desde el JSON -->
+            <p id="estadoProductos" class="text-secondary fst-italic">
+                Cargando productos...
+            </p>
 
-                <!-- CARD 3 -->
-                <div class="col-12 col-md-6 col-lg-4">
-
-                    <article class="card producto h-100">
-
-                        <img
-                                src="img/videojuego3.jpg"
-                                class="card-img-top"
-                                alt="Imagen representativa del videojuego Minecraft"
-                        >
-
-                        <div class="card-body d-flex flex-column">
-
-                            <h3 class="card-title">
-                                Minecraft
-                            </h3>
-
-                            <p class="card-text">
-                                Construye, explora y crea tu propio mundo
-                                utilizando diferentes recursos y materiales.
-                            </p>
-
-                            <a
-                                    href="https://www.minecraft.net/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="btn btn-primary mt-auto"
-                            >
-                                Sitio oficial de Minecraft
-                            </a>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
+            <!-- Aquí se insertan dinámicamente las tarjetas de producto -->
+            <div class="row g-4 mt-2" id="listaProductos"></div>
 
         </div>
 
@@ -370,37 +298,38 @@
 
             <p>
                 En la tienda puedes encontrar videojuegos de diferentes
-                géneros para disfrutar según tus preferencias.
+                géneros para disfrutar según tus preferencias. Haz click
+                en una categoría para filtrar los productos.
             </p>
 
             <div class="row g-3">
 
                 <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="categoria p-3 rounded text-center">
+                    <div class="categoria p-3 rounded text-center" data-categoria="Acción y aventura">
                         Acción y aventura
                     </div>
                 </div>
 
                 <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="categoria p-3 rounded text-center">
+                    <div class="categoria p-3 rounded text-center" data-categoria="Deportes">
                         Deportes
                     </div>
                 </div>
 
                 <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="categoria p-3 rounded text-center">
+                    <div class="categoria p-3 rounded text-center" data-categoria="RPG">
                         RPG
                     </div>
                 </div>
 
                 <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="categoria p-3 rounded text-center">
+                    <div class="categoria p-3 rounded text-center" data-categoria="Estrategia">
                         Estrategia
                     </div>
                 </div>
 
                 <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="categoria p-3 rounded text-center">
+                    <div class="categoria p-3 rounded text-center" data-categoria="Juegos familiares">
                         Juegos familiares
                     </div>
                 </div>
@@ -444,7 +373,7 @@
                 </a>.
             </p>
 
-            <!-- FORMULARIO DE BOLETÍN (evento submit gestionado en js/script.js) -->
+            <!-- FORMULARIO DE BOLETÍN (evento submit gestionado en assets/js/script.js) -->
             <form id="formBoletin" class="mt-4" novalidate>
 
                 <h3 class="fs-5">Suscríbete a nuestro boletín</h3>
@@ -509,8 +438,8 @@
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
 ></script>
 
-<!-- Script propio: manipulación del DOM, eventos y Fetch API -->
-<script src="js/script.js"></script>
+<!-- Script propio: carrito, búsqueda, categorías y Fetch API -->
+<script src="assets/js/script.js"></script>
 
 </body>
 </html>
