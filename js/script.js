@@ -56,14 +56,19 @@ function inicializarFavoritos() {
         botonFavorito.type = 'button';
         botonFavorito.className = 'btn btn-outline-light btn-sm btn-favorito mt-2';
         botonFavorito.textContent = '♡ Agregar a favoritos';
-
-        // Evento click: agrega o quita el juego de la lista de favoritos
-        botonFavorito.addEventListener('click', () => {
-            alternarFavorito(tituloJuego, botonFavorito);
-        });
+        botonFavorito.dataset.juego = tituloJuego; // usado por el listener delegado
 
         cuerpo.appendChild(botonFavorito);
     });
+
+    // Un solo listener en el contenedor de productos
+    seccionProductos.addEventListener('click', (evento) => {
+        const boton = evento.target.closest('.btn-favorito');
+        if (!boton) return;
+        alternarFavorito(boton.dataset.juego, boton);
+    });
+
+    inicializarRemocionFavoritos();
 }
 
 /**
@@ -93,9 +98,8 @@ function alternarFavorito(nombreJuego, boton) {
 
         const botonQuitar = document.createElement('button');
         botonQuitar.type = 'button';
-        botonQuitar.className = 'btn btn-sm btn-outline-danger';
+        botonQuitar.className = 'btn btn-sm btn-outline-danger btn-quitar-favorito';
         botonQuitar.textContent = 'Quitar';
-        botonQuitar.addEventListener('click', () => alternarFavorito(nombreJuego, boton));
 
         item.appendChild(texto);
         item.appendChild(botonQuitar);
@@ -108,6 +112,24 @@ function alternarFavorito(nombreJuego, boton) {
     // Mostramos u ocultamos el mensaje de "lista vacía" según corresponda
     mensajeVacio.style.display = lista.children.length > 1 ? 'none' : 'list-item';
 }
+
+/**
+ * Delegación de eventos para el botón "Quitar" de cada favorito: un solo
+ * listener en la lista, en vez de uno por cada elemento agregado.
+ */
+function inicializarRemocionFavoritos() {
+    const lista = document.getElementById('listaFavoritos');
+    lista.addEventListener('click', (evento) => {
+        const botonQuitar = evento.target.closest('.btn-quitar-favorito');
+        if (!botonQuitar) return;
+
+        const nombreJuego = botonQuitar.closest('.item-favorito').textContent
+            .replace('🎮', '').replace('Quitar', '').trim();
+        const botonOriginal = document.querySelector(`.btn-favorito[data-juego="${nombreJuego}"]`);
+        alternarFavorito(nombreJuego, botonOriginal);
+    });
+}
+
 
 // PASO 2: Evento mouseover / mouseout en las categorías
 
