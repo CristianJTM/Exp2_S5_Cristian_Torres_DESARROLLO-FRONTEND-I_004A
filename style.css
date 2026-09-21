@@ -44,6 +44,21 @@ body {
     color: #38bdf8;
 }
 
+.navegacion .dropdown-menu {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+}
+
+.navegacion .dropdown-item {
+    color: #e2e8f0;
+}
+
+.navegacion .dropdown-item:hover,
+.navegacion .dropdown-item:focus {
+    background-color: #172033;
+    color: #38bdf8;
+}
+
 
 /* CONTENIDO PRINCIPAL */
 
@@ -90,10 +105,6 @@ body {
     color: #e2e8f0;
 }
 
-.producto:nth-child(2) {
-    border-color: #a78bfa;
-}
-
 .producto .card-img-top {
     height: 280px;
     object-fit: contain;
@@ -110,6 +121,23 @@ body {
     color: #cbd5e1;
 }
 
+.badge-categoria {
+    display: inline-block;
+    background-color: #38bdf8;
+    color: #0f172a;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+
+.precio-producto {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #4ade80;
+    margin-bottom: 0.5rem;
+}
+
 .producto .btn-primary {
     background-color: #38bdf8;
     border-color: #38bdf8;
@@ -123,16 +151,81 @@ body {
 }
 
 
+/* CARRITO DE COMPRAS */
+
+.lista-carrito {
+    border-top: 1px solid #334155;
+}
+
+.item-carrito {
+    border-bottom: 1px solid #334155;
+    color: #e2e8f0;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.controles-carrito button {
+    margin-left: 5px;
+}
+
+#totalCarrito {
+    color: #4ade80;
+}
+
+
 /* CATEGORÍAS */
 
 .categoria {
     background-color: #0f172a;
     border-left: 4px solid #38bdf8;
     color: #e2e8f0;
+    cursor: pointer;
 }
 
 .categoria:hover {
     background-color: #172033;
+}
+
+.categoria-activa {
+    background-color: #172033;
+    border-left-color: #7dd3fc;
+    transform: translateY(-2px);
+    transition: transform 0.15s ease;
+}
+
+
+/* FORMULARIOS (búsqueda y boletín) */
+
+.form-label {
+    color: #e2e8f0;
+}
+
+.form-control {
+    background-color: #0f172a;
+    border: 1px solid #475569;
+    color: #e2e8f0;
+}
+
+.form-control:focus {
+    background-color: #0f172a;
+    color: #e2e8f0;
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 0.2rem rgba(56, 189, 248, 0.25);
+}
+
+.form-control::placeholder {
+    color: #94a3b8;
+    opacity: 1;
+}
+
+.mensaje-exito {
+    color: #4ade80;
+    font-weight: bold;
+}
+
+.mensaje-error {
+    color: #f87171;
+    font-weight: bold;
 }
 
 
@@ -161,95 +254,7 @@ body {
 }
 
 
-/* FAVORITOS (generados por JavaScript) */
-
-.lista-favoritos {
-    border-top: 1px solid #334155;
-}
-
-.item-favorito {
-    border-bottom: 1px solid #334155;
-    color: #e2e8f0;
-}
-
-.btn-favorito-activo {
-    background-color: #38bdf8;
-    color: #0f172a;
-    border-color: #38bdf8;
-}
-
-
-/* CATEGORÍAS - estado activo por mouseover (JS) */
-
-.categoria-activa {
-    background-color: #172033;
-    border-left-color: #7dd3fc;
-    transform: translateY(-2px);
-    transition: transform 0.15s ease;
-}
-
-
-/* FORMULARIO DE BOLETÍN */
-
-#formBoletin .form-label {
-    color: #e2e8f0;
-}
-
-#formBoletin .form-control {
-    background-color: #0f172a;
-    border: 1px solid #475569;
-    color: #e2e8f0;
-}
-
-#formBoletin .form-control::placeholder {
-    color: #94a3b8;
-    opacity: 1;
-}
-
-#formBoletin .form-control:focus {
-    background-color: #0f172a;
-    color: #e2e8f0;
-    border-color: #38bdf8;
-    box-shadow: 0 0 0 0.2rem rgba(56, 189, 248, 0.25);
-}
-
-.mensaje-exito {
-    color: #4ade80;
-    font-weight: bold;
-}
-
-.mensaje-error {
-    color: #f87171;
-    font-weight: bold;
-}
-
-
-/* TARJETAS DE JUEGOS CARGADOS POR FETCH */
-
-.producto-externo {
-    background-color: #0f172a;
-    border: 1px solid #475569;
-    color: #e2e8f0;
-}
-
-.producto-externo .card-title {
-    color: #f8fafc;
-    font-size: 1.2rem;
-}
-
-.badge-genero {
-    display: inline-block;
-    background-color: #38bdf8;
-    color: #0f172a;
-    font-size: 0.8rem;
-    font-weight: bold;
-    padding: 3px 10px;
-    border-radius: 20px;
-}
-
-
 /* AJUSTES PARA PANTALLAS PEQUEÑAS */
-/* Solo lo que no tiene utilidad responsive directa en Bootstrap */
 
 @media (max-width: 500px) {
 
