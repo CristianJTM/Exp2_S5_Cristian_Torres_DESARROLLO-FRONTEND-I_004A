@@ -44,21 +44,6 @@ body {
     color: #38bdf8;
 }
 
-.navegacion .dropdown-menu {
-    background-color: #1e293b;
-    border: 1px solid #334155;
-}
-
-.navegacion .dropdown-item {
-    color: #e2e8f0;
-}
-
-.navegacion .dropdown-item:hover,
-.navegacion .dropdown-item:focus {
-    background-color: #172033;
-    color: #38bdf8;
-}
-
 
 /* CONTENIDO PRINCIPAL */
 
@@ -138,6 +123,30 @@ body {
     margin-bottom: 0.5rem;
 }
 
+.precio-tachado {
+    text-decoration: line-through;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-right: 8px;
+}
+
+.precio-oferta {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #f97316;
+}
+
+.badge-oferta {
+    display: inline-block;
+    background-color: #f97316;
+    color: #0f172a;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 20px;
+    vertical-align: middle;
+}
+
 .producto .btn-primary {
     background-color: #38bdf8;
     border-color: #38bdf8;
@@ -186,11 +195,10 @@ body {
     background-color: #172033;
 }
 
-.categoria-activa {
+.categoria-seleccionada {
     background-color: #172033;
     border-left-color: #7dd3fc;
-    transform: translateY(-2px);
-    transition: transform 0.15s ease;
+    font-weight: bold;
 }
 
 
