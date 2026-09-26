@@ -6,6 +6,7 @@
 // ============================================================
 
 const { useState, useEffect } = React;
+const { createPortal } = ReactDOM;
 
 /**
  * Da formato de precio en pesos chilenos a un número.
@@ -128,6 +129,42 @@ function FiltroCategorias({ categorias, categoriaSeleccionada, onSeleccionar }) 
                 </div>
             </div>
         </section>
+    );
+}
+
+
+// ------------------------------------------------------------
+// COMPONENTE: MenuCategoriasNav
+// Opciones de categoría que se renderizan dentro del dropdown del
+// navbar (HTML estático) mediante un portal, para que el acceso
+// rápido desde la barra de navegación use el mismo estado y la
+// misma función de filtrado que la sección "Categorías" de la página.
+// ------------------------------------------------------------
+function MenuCategoriasNav({ categorias, categoriaSeleccionada, onSeleccionar }) {
+    return (
+        <>
+            <li>
+                <a
+                    className={'dropdown-item' + (categoriaSeleccionada === 'todos' ? ' active' : '')}
+                    href="#productos"
+                    onClick={() => onSeleccionar('todos')}
+                >
+                    Todos los productos
+                </a>
+            </li>
+
+            {categorias.map((categoria) => (
+                <li key={categoria}>
+                    <a
+                        className={'dropdown-item' + (categoriaSeleccionada === categoria ? ' active' : '')}
+                        href="#productos"
+                        onClick={() => onSeleccionar(categoria)}
+                    >
+                        {categoria}
+                    </a>
+                </li>
+            ))}
+        </>
     );
 }
 
@@ -330,8 +367,21 @@ function App() {
         return coincideNombre && coincideCategoria;
     });
 
+    // Nodo del navbar (HTML estático) donde se "teletransportan" las
+    // opciones de categoría, manteniendo el estado en este componente.
+    const nodoMenuNav = document.getElementById('listaCategoriasNav');
+
     return (
         <>
+            {nodoMenuNav && createPortal(
+                <MenuCategoriasNav
+                    categorias={categorias}
+                    categoriaSeleccionada={categoriaSeleccionada}
+                    onSeleccionar={setCategoriaSeleccionada}
+                />,
+                nodoMenuNav
+            )}
+
             <SeccionProductos
                 cargando={cargando}
                 error={error}
