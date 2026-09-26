@@ -71,6 +71,24 @@
                     <a class="nav-link" href="#productos">Productos</a>
                 </li>
 
+                <!-- Categorías: el <ul> queda vacío en el HTML; React inserta las
+                     opciones aquí mismo mediante un portal (ver app.jsx) -->
+                <li class="nav-item dropdown">
+                    <a
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            id="menuCategoriasDropdown"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                    >
+                        Categorías
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" id="listaCategoriasNav" aria-labelledby="menuCategoriasDropdown">
+                        <!-- Contenido insertado por React vía createPortal -->
+                    </ul>
+                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="#carrito">Carrito</a>
                 </li>
